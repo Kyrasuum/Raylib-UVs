@@ -1,8 +1,14 @@
-run: build
+run-go: build-go
+	./main.exe
+
+build-go:
+	go build -o main.exe go/main.go
+
+run-c: build-c
 	./a.out
 
-build:
-	cc test.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+build-c:
+	cc c/test.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
 clean:
 	rm a.out
